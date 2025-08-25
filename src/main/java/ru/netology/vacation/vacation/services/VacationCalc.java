@@ -1,6 +1,6 @@
 package ru.netology.vacation.vacation.services;
 
-public class vacationCalc {
+public class VacationCalc {
     public int calculate(int income, int expenses, int threshold) {
         int money = 0; // остаток денег
         int count = 0; // счётчик месяцев
@@ -8,7 +8,8 @@ public class vacationCalc {
         for (month = 0; month < 12; month++) {
             if (money >= threshold) {
                 count++; // расчёт месяцев отдыха
-                money = money - (money - expenses); // расчёт остатка денег в отпуске
+                money = money - (money - expenses); // обязательные траты
+                money = money / 3; // траты на отдых
             } else {
                 money = money + income - expenses; // расчёт остатка денег не в отпуске
             }

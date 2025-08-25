@@ -6,12 +6,12 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 
-public class vacationCalcTest {
+public class VacationCalcTest {
     @ParameterizedTest
     //подготавливаем данные
-    @CsvFileSource (files = "src/test/resources/vacation.csv")
+    @CsvFileSource(files = "src/test/resources/vacation.csv")
     public void testVacationMonths(int expected, int income, int expenses, int threshold) {
-        vacationCalc service = new vacationCalc();
+        VacationCalc service = new VacationCalc();
 
         // вызываем целевой метод
         int actual = service.calculate(income, expenses, threshold);
