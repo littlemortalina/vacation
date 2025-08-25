@@ -9,13 +9,16 @@ public class vacationCalcTest {
     void shouldCalculateWithIncome10_000Expenses3_000Threshold20_000() {
         vacationCalc service = new vacationCalc();
 
-        int income = 10_000;
-        int expenses = 3_000;
-        int threshold = 20_000;
-        int expected = 3;
+        // подготавливаем данные
+        int income = 10_000; // доход
+        int expenses = 3_000; // траты
+        int threshold = 20_000; // порог остатка
+        int expected = 3; // ожидаемый результат
 
+        // вызываем целевой метод
         int actual = service.calculate(income, expenses, threshold);
 
+        // сравниваем ожидаемый и фактический результат
         Assertions.assertEquals(expected, actual);
 
     }
@@ -24,13 +27,16 @@ public class vacationCalcTest {
     void shouldCalculateWithIncome100_000Expenses60_000Threshold150_000() {
         vacationCalc service = new vacationCalc();
 
+        // подготавливаем данные
         int income = 100_000;
         int expenses = 60_000;
         int threshold = 150_000;
         int expected = 2;
 
+        // вызываем целевой метод
         int actual = service.calculate(income, expenses, threshold);
 
+        // сравниваем ожидаемый и фактический результат
         Assertions.assertEquals(expected, actual);
 
     }
